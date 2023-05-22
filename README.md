@@ -67,13 +67,37 @@ Quaternion(from, vector(3d), q(4d), rpy, dcm)
 import numpy as np
 from ahrs import q_conj, Quaternion, DEG2RAD, RAD2DEG
 g = Quaternion(np.array([0,0,0,-1])) # gravity
-p = Quaternion(np.array([90,0,0])*DEG2RAD)
+# RYP
+p = Quaternion.from_rpy(Quaternion, (90*DEG2RAD,0,0))
+
+# AHRS
+# Roll Pitch Yaw or phi theta psi
+# q in w,x,y,z
+# This matches Wiki
+# https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles
+w = cos(Y/2)*cos(P/2)*cos(R/2) + sin(Y/2) * sin(P/2) * sin(R/2)
+x = cos(Y/2)*cos(P/2)*cos(R/2) - sin(Y/2) * sin(P/2) * sin(R/2)
+y = cos(Y/2)*sin(P/2)*cos(R/2) + sin(Y/2) * cos(P/2) * sin(R/2)
+z = sin(Y/2)*cos(P/2)*cos(R/2) - cos(Y/2) * sin(P/2) * sin(R/2)
 
 RPY +90,   0,  0 => q = [0.71, 0,    0,    0.71]
 RPY -90,   0,  0 => q = [0.71, 0,    0,   -0.71]
-RPY   0,   0, 90 => q = [0.71, 0,    0.71, 0]
-RPY   0,   0,-90 => q = [0.71, 0,   -0.71, 0]
-RPY   0,  90,  0 => q = [0.71, 0.71, 0,    0]
-RPY   0, -90,  0 => q = [0.71,-0.71, 0,    0]
+RPY   0,  90,  0 => q = [0.71, 0,    0.71, 0]
+RPY   0, -90,  0 => q = [0.71, 0,   -0.71, 0]
+RPY   0,   0, 90 => q = [0.71, 0.71, 0,    0]
+RPY   0,   0,-90 => q = [0.71,-0.71, 0,    0]
+
+https://danceswithcode.net/engineeringnotes/quaternions/quaternions.html
+This does not match Wiki
+R                       [q0,q1,q2,q3]
+RPY +90,   0,  0 => q = [0.71, 0.71, 0,    0]
+RPY -90,   0,  0 => q = [0.71,-0.71, 0,    0]
+Y
+RPY   0,   0, 90 => q = [0.71, 0,    0, 0.71]
+RPY   0,   0,-90 => q = [0.71, 0,    0,-0.71]
+P
+RPY   0,  90,  0 => q = [0.71, 0, 0.71,    0]
+RPY   0, -90,  0 => q = [0.71, 0,-0.71,    0]
+
 
 
