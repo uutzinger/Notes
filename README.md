@@ -98,6 +98,18 @@ RPY   0,   0, 90 => q = [0.71, 0.71, 0,    0]
 
 RPY   0,   0,-90 => q = [0.71,-0.71, 0,    0]
 
+#### Numpy Quaternions
+q in w,x,y,z
+quaternion.as_euler_angles
+quaternion.from_euler_angles
+
+YRP
+
+alpha, beta, gamma first beta around z then alpha around y then gamma around z
+1) right-handed rotation about the z axis through an angle gamma (yaw)
+2) right-handed rotation about the (non-rotated) y axis through an angle beta (pitch) 
+3) right-handed rotation about the (non-rotated) z axis through an angle alpha.
+
 https://danceswithcode.net/engineeringnotes/quaternions/quaternions.html
 This does not match Wiki
 R                       [q0,q1,q2,q3]
