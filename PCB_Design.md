@@ -1,4 +1,4 @@
-## PCB design rule of thumb:
+## PCB Design Rule of Thumb:
 
 - Search datasheets of your components for a refrence design. 
 - Search for application notes of the components you are using and search for a reference design.
