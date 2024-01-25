@@ -1,5 +1,17 @@
 ## PCB Design Rule of Thumb:
 
+### Examples Designs: 
+
+- Motor Controllers
+
+    - [ODrive](https://github.com/odriverobotics/ODriveHardware/tree/master/v3/v3.5docs)
+    - [VESEC](https://github.com/vedderb/bldc-hardware)
+
+- Sensors:
+    - [ECG](https://github.com/sparkfun/AD8232_Heart_Rate_Monitor)
+    - [PulseOx](https://github.com/Protocentral/AFE4490_Oximeter/tree/master/Hardware/pc_afe4490_brk_v2)
+
+### Rules
 - Search datasheets of your components for a refrence design. 
 - Search for application notes of the components you are using and search for a reference design.
 - Search for an evaluation kit of the component you like to use and lookup the circuit that is used in the evalaution kit manual. If available also take a look at the photos showing the layout for potential component placement.
