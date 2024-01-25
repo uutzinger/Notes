@@ -11,6 +11,8 @@
     - [ECG](https://github.com/sparkfun/AD8232_Heart_Rate_Monitor)
     - [PulseOx](https://github.com/Protocentral/AFE4490_Oximeter/tree/master/Hardware/pc_afe4490_brk_v2)
 
+- If you want to become advanced check out Phil's videos at https://www.phils-lab.net/
+
 ### Rules
 - Search datasheets of your components for a refrence design. 
 - Search for application notes of the components you are using and search for a reference design.
